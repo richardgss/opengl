@@ -77,12 +77,13 @@ glfw.set_window_size_callback(window, window_resize)
 glfw.make_context_current(window)
 
 # Load textures directly in the code
-textures = [load_texture_from_file("models/chair/textures/Madeira-Madeira-Tauari-Interna-Natural-Full-862x862-backed.jpg"),
-            load_texture_from_file("models/chair/textures/Madeira-Madeira-Tauari-Interna-Natural-Full-862x862-backed.jpg")
-            ]
+textures = [
+    load_texture_from_file("models/chair/textures/Madeira-Madeira-Tauari-Interna-Natural-Full-862x862.jpg"),
+    load_texture_from_file("models/chair/textures/Madeira-Madeira-Tauari-Interna-Natural-Full-862x862.jpg")
+]
 
-chibi_indices, chibi_buffer = ObjLoader.load_model("models/chair/cadeira_20240418175518.obj")
-monkey_indices, monkey_buffer = ObjLoader.load_model("models/chair/cadeira_20240418175518.obj")
+chibi_indices, chibi_buffer = ObjLoader.load_model("models/keyboard/keyboard.obj")
+monkey_indices, monkey_buffer = ObjLoader.load_model("models/keyboard/keyboard.obj")
 
 shader = compileProgram(compileShader(vertex_src, GL_VERTEX_SHADER), compileShader(fragment_src, GL_FRAGMENT_SHADER))
 
@@ -129,7 +130,7 @@ glUniformMatrix4fv(proj_loc, 1, GL_FALSE, projection)
 glUniformMatrix4fv(view_loc, 1, GL_FALSE, view)
 
 # Defina uma matriz de translação para mover a textura (exemplo: mover 0.1 na direção X)
-texture_translation = pyrr.matrix44.create_from_translation(pyrr.Vector3([1, 1, 1]))
+texture_translation = pyrr.matrix44.create_from_translation(pyrr.Vector3([0, 0, 0]))
 
 while not glfw.window_should_close(window):
     glfw.poll_events()
