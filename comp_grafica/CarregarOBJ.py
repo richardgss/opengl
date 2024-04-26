@@ -78,8 +78,8 @@ glfw.make_context_current(window)
 
 # Load textures directly in the code
 textures = [
-    load_texture_from_file("models/chair/textures/Madeira-Madeira-Tauari-Interna-Natural-Full-862x862.jpg"),
-    load_texture_from_file("models/chair/textures/Madeira-Madeira-Tauari-Interna-Natural-Full-862x862.jpg")
+    load_texture_from_file("models/keyboard/plastico.jpg"),
+    load_texture_from_file("models/keyboard/plastico.jpg")
 ]
 
 chibi_indices, chibi_buffer = ObjLoader.load_model("models/keyboard/keyboard.obj")
